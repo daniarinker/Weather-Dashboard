@@ -1,1 +1,4 @@
-# hw-6
+# Weather Dashboard
+<hr>
+
+## About
