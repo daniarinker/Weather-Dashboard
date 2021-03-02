@@ -18,48 +18,61 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-dark justify-content-center">
-      <span class="navbar-brand mb-0 h1">
+    <div class="container">
         <h1>Weather Dashboard</h1>
-      </span>
-    </nav>
-    <div class="container m-0">
-      <div class="col">
+
         <div class="row">
-          <h5>Search for a City:</h5>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend"></div>
-            <input
-              id="searchForm"
-              type="text"
-              class="form-control"
-              placeholder=""
-              aria-label=""
-              aria-describedby="basic-addon1"
-            />
-            <button id="searchButton" class="btn btn-primary" type="submit">
-              <i class="bi bi-search"></i>
-            </button>
+
+            
+            <div class="col-md-3">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="city-name" placeholder="Find a City">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button" id="searchBtn"><i class="bi bi-search"></i>
+                          Search</button>
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush" id="city-history">
+                <li>List here</li>
+                </ul>
+            </div>            
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body" id="forecast-card">
+                              <div class="card-body" id="forecast-card">  
+                              <h2 id="searchedName">Searched Name</h2>
+                                <img id="currentIcon"><br>
+                                <div id="currentDate"></div>
+                              </div>
+                                <br>
+                                <label for="currentTemp">Temp: </label>
+                                <div style="display: inline" id="currentTemp"></div>
+                                <br>
+                                <label for="currentHumid">Humidity: </label>
+                                <div id="currentHumid"></div>
+                                <br>
+                                <label for="currentWind">Wind: </label>
+                                <div id="currentWind"></div>
+                                <br>
+                                <label for="currentUV">UV Index: </label>
+                                <div id="currentUV"></div>
+                                <br>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      <br>
+                  <div class="row mt-5">
+                    <h5 id="5d-forecast" class="bg-light d-none py-2 w-100" >5-Day Forecast: </h5>
+                  </div>
+                      <div class="row">                    
+                        <div class="card-deck text-white w-100" id="forecastCard">
+                      </div>                                             
+                    </div>
+                </div>
           </div>
-        </div>
-      </div>
-      <!-- data below to populate from result -->
-      <div class="col">
-        <div class="card sm"></div>
-      </div>
-      <div class="col col-sm-6" id="results">
-        <h3 class="city"></h1>
-            <p class="description"></p>
-            <p class="temp"></p>
-            <p class="humidity"></p>
-            <p class="wind"></p>
-            <p class="uvindex"></p>
-            <p class="lat"></p>
-            <p class="lon"></p>
-          </div>
-        </div>
-    </div>
-    </div>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
