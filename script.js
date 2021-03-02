@@ -50,11 +50,11 @@ $(document).onLoad(function () {
     console.log(setSearchHistory);
   });
 
-  let dayOneCard = $(".dayOneCard");
-  let dayTwoCard = $(".dayTwoCard");
-  let dayThreeCard = $(".dayThreeCard");
-  let dayFourCard = $(".dayFourCard");
-  let dayFiveCard = $(".dayFiveCard");
+  let oneCard = $(".oneCard");
+  let twoCard = $(".twoCard");
+  let threeCard = $(".threeCard");
+  let fourCard = $(".fourCard");
+  let fiveCard = $(".fiveCard");
 
   $("#searchCity").onClick(function () {
     let city = $("#yourCity").val();
@@ -70,67 +70,67 @@ $(document).onLoad(function () {
     }).then(function (response) {
       console.log(response);
 
-      let iconCodeOne = response.list[0].weather[0].icon;
-      let iconCodeTwo = response.list[8].weather[0].icon;
-      let iconCodeThree = response.list[16].weather[0].icon;
-      let iconCodeFour = response.list[24].weather[0].icon;
-      let iconCodeFive = response.list[32].weather[0].icon;
+      let iconOne = response.list[0].weather[0].icon;
+      let iconTwo = response.list[8].weather[0].icon;
+      let iconThree = response.list[16].weather[0].icon;
+      let iconFour = response.list[24].weather[0].icon;
+      let iconFive = response.list[32].weather[0].icon;
 
-      $(".iconCodeOne").html(
+      $(".iconOne").html(
         "<img src='http://openweathermap.org/img/w/" +
-          iconCodeOne +
+          iconOne +
           ".png' alt='Icon depicting current weather.'>"
       );
-      $(".iconCodeTwo").html(
+      $(".iconTwo").html(
         "<img src='http://openweathermap.org/img/w/" +
-          iconCodeTwo +
+          iconTwo +
           ".png' alt='Icon depicting current weather.'>"
       );
-      $(".iconCodeThree").html(
+      $(".iconThree").html(
         "<img src='http://openweathermap.org/img/w/" +
-          iconCodeThree +
+          iconThree +
           ".png' alt='Icon depicting current weather.'>"
       );
-      $(".iconCodeFour").html(
+      $(".iconFour").html(
         "<img src='http://openweathermap.org/img/w/" +
-          iconCodeFour +
+          iconFour +
           ".png' alt='Icon depicting current weather.'>"
       );
-      $(".iconCodeFive").html(
+      $(".iconFive").html(
         "<img src='http://openweathermap.org/img/w/" +
-          iconCodeFive +
+          iconFive +
           ".png' alt='Icon depicting current weather.'>"
       );
 
-      dayOneCard.text(
+      oneCard.text(
         "Date: " +
           response.list[0].dt_txt +
           " " +
           "Condition: " +
           response.list[0].weather[0].main
       );
-      dayTwoCard.text(
+      twoCard.text(
         "Date: " +
           response.list[8].dt_txt +
           " " +
           "Condition: " +
           response.list[8].weather[0].main
       );
-      dayThreeCard.text(
+      threeCard.text(
         "Date: " +
           response.list[16].dt_txt +
           " " +
           "Condition: " +
           response.list[16].weather[0].main
       );
-      dayFourCard.text(
+      fourCard.text(
         "Date: " +
           response.list[24].dt_txt +
           " " +
           "Condition: " +
           response.list[24].weather[0].main
       );
-      dayFiveCard.text(
+      fiveCard.text(
         "Date: " +
           response.list[32].dt_txt +
           " " +
@@ -151,7 +151,8 @@ $(document).onLoad(function () {
           latUv +
           "&lon=" +
           lonUv +
-          "&APPID=0e182e88128e4b132fbd898043dbf07e",
+          "&APPID=" +
+          API_KEY,
         method: "GET",
       }).then(function (response) {
         console.log(response[0].value);
