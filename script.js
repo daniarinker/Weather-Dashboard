@@ -5,7 +5,7 @@ let WeatherDescription = $(".WeatherDescription");
 let MainHumidity = $(".MainHumidity");
 let WindSpeeed = $(".WindSpeed");
 let forecast = $(".forecast");
-let key = "63d898fccb40c6189c8cd5093662abf9";
+let API_KEY = "0e182e88128e4b132fbd898043dbf07e";
 
 $(document).onLoad(function () {
   $("#searchCity").onClick(function () {
@@ -65,7 +65,7 @@ $(document).onLoad(function () {
         city +
         "&units=imperial" +
         "&APPID=" +
-        key,
+        API_KEY,
       method: "GET",
     }).then(function (response) {
       console.log(response);
